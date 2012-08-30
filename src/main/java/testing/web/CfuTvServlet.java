@@ -1,6 +1,5 @@
 package testing.web;
 
-import dk.statsbiblioteket.digitaltv.access.model.RitzauProgram;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import testing.model.ReducedRitzauProgram;
@@ -10,8 +9,6 @@ import testing.service.ServiceException;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.beans.XMLEncoder;
-import java.io.ByteArrayOutputStream;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -35,7 +32,6 @@ public class CfuTvServlet {
         log = LoggerFactory.getLogger(CfuTvServlet.class);
     }
 
-    //http://localhost:8080/cfutv/metadata/search?from=2012-02-01_17:00&to=2012-02-02_18:30
     @GET
     @Path("/search")
     @Produces(MediaType.APPLICATION_XML)
@@ -61,10 +57,27 @@ public class CfuTvServlet {
         }
 
         try{
-            List<ReducedRitzauProgram> result = service.search(channel_name,from,to,title,description);
-            return result;
+            return service.search(channel_name,from,to,title,description);
         } catch(ServiceException ex){
             throw new WebApplicationException(ex,Response.Status.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GET
+    @Path("/fullpost")
+    @Produces("application/xml")
+    public Response fullPost(@QueryParam("id") String programIdRaw){
+        try{
+            Long programId = Long.parseLong(programIdRaw);
+            try{
+                String result = service.getFullPost(programId);
+                log.info("----------------------FULLPOST SUCCESS--------------------");
+                return Response.status(200).entity(result).build();
+            } catch(ServiceException ex){
+                throw new WebApplicationException(ex,Response.Status.INTERNAL_SERVER_ERROR);
+            }
+        } catch(NumberFormatException ex){
+            throw new WebApplicationException(ex,Response.Status.BAD_REQUEST);
         }
     }
 

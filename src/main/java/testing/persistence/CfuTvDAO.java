@@ -64,7 +64,7 @@ public class CfuTvDAO extends GenericHibernateDAO<RitzauProgram, Long> {
         return (List<RitzauProgram>) criteria.addOrder(Order.asc("starttid")).list();
     }
 
-    public RitzauProgram getById(Long id){
+    public RitzauProgram getByFullId(Long id){
         Criteria criteria = getSession().createCriteria(RitzauProgram.class);
         if(id != null){
             Criterion id_criterion = Restrictions.eq("id",id);

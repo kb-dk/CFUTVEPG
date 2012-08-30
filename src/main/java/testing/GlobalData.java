@@ -13,6 +13,24 @@ import java.util.List;
 public class GlobalData{
     private static List<String> allowedChannels;
     private static Date daysBack;
+    private static String pathToTemplate;
+    private static String pathToFtpServer;
+
+    public static String getPathToFtpServer() {
+        return pathToFtpServer;
+    }
+
+    public static void setPathToFtpServer(String pathToFtpServer) {
+        GlobalData.pathToFtpServer = pathToFtpServer;
+    }
+
+    public static String getPathToTemplate() {
+        return pathToTemplate;
+    }
+
+    public static void setPathToTemplate(String pathToTemplate) {
+        GlobalData.pathToTemplate = pathToTemplate;
+    }
 
     public static List<String> getAllowedChannels() {
         return allowedChannels;

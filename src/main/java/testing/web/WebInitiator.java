@@ -25,8 +25,12 @@ public class WebInitiator implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce){
         //Logger
+        String logBackPath = sce.getServletContext().getInitParameter("logback_cfg");
+        System.out.println("------------------------------------");
+        System.out.println("Logback config path: '"+logBackPath + "'");
+        System.out.println("------------------------------------");
         try{
-            new LogbackConfigLoader("C:\\Users\\asj\\Desktop\\JerseyTest\\logback.xml");
+            new LogbackConfigLoader(logBackPath);
         } catch(JoranException ex){
             System.out.println(ex.getMessage() + " " + ex.getStackTrace());
         }
@@ -35,12 +39,16 @@ public class WebInitiator implements ServletContextListener {
         //Hibernate
         String cfgPath = sce.getServletContext().getInitParameter("hibernate_cfg");
         System.out.println("------------------------------------");
-        System.out.println("config path: '"+cfgPath + "'");
+        System.out.println("Hibernate config path: '"+cfgPath + "'");
         System.out.println("------------------------------------");
         final File cfgFile = new File(cfgPath);
         log.info("Reading hibernate configuration from " + cfgFile.getAbsolutePath());
         CfuTvHibernateUtil util = CfuTvHibernateUtil.initialiseFactory(cfgFile);
         util.getSession();
+
+        //PBCore template
+        String templatePath = sce.getServletContext().getInitParameter("template_location");
+        GlobalData.setPathToTemplate(templatePath);
 
         //Allowed channels
         String allowedChannels = sce.getServletContext().getInitParameter("allowed_channels");

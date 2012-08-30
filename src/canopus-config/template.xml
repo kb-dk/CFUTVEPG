@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<program xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="preingestedRadioTVProgram.xsd">
+    <pbcore>
+        <PBCoreDescriptionDocument xmlns="http://www.pbcore.org/PBCore/PBCoreNamespace.html">
+
+            <pbcoreIdentifier>
+                <identifier>[INSERT_PBC_ID]</identifier>
+                <identifierSource>[INSERT_PBC_ID_SOURCE]</identifierSource>
+            </pbcoreIdentifier>
+
+            <pbcoreTitle>
+                <title>[INSERT_PBC_TITLE]</title>
+                <titleType>[INSERT_PBC_TITLE_TYPE]</titleType>
+            </pbcoreTitle>
+
+            <pbcoreTitle>
+                <title>[INSERT_PBC_ORIGINAL_TITLE]</title>
+                <titleType>[INSERT_PBC_TITLE_ORIGINAL]</titleType>
+            </pbcoreTitle>
+
+            <pbcoreTitle>
+                <title>[INSERT_PBC_EPISODE_TITLE]</title>
+                <titleType>[INSERT_PBC_TITLE_EPISODE]</titleType>
+            </pbcoreTitle>
+
+            <pbcoreDescription>
+                <description>
+                    [INSERT_PBC_LONG_DESCRIPTION_1]
+                </description>
+                <descriptionType>[INSERT_PBC_DESCRIPTION_LONG_1]</descriptionType>
+            </pbcoreDescription>
+
+            <pbcoreDescription>
+                <description>
+                    [INSERT_PBC_LONG_DESCRIPTION_2]
+                </description>
+                <descriptionType>[INSERT_PBC_DESCRIPTION_LONG_2]</descriptionType>
+            </pbcoreDescription>
+
+            <pbcoreDescription>
+                <description>
+                    [INSERT_PBC_SHORT_DESCRIPTION]
+                </description>
+                <descriptionType>[INSERT_PBC_DESCRIPTION_SHORT]</descriptionType>
+            </pbcoreDescription>
+
+            <pbcoreGenre>
+                <genre>hovedgenre: [INSERT_PBC_MAIN_GENRE]</genre>
+            </pbcoreGenre>
+
+            <pbcoreGenre>
+                <genre>undergenre: [INSERT_PBC_SUB_GENRE]</genre>
+            </pbcoreGenre>
+
+            <pbcoreGenre>
+                <genre>indhold_emne: [INSERT_PBC_TVMETER_CONTENTTYPE]</genre>
+            </pbcoreGenre>
+
+            [INSERT_PBC_AUTHORS]
+
+            [INSERT_PBC_CONTRIBUTORS]
+
+            [INSERT_PBC_INSTRUCTORS]
+
+            <pbcorePublisher>
+                <publisher>[INSERT_PBC_CHANNEL_NAME_ENG]</publisher>
+                <publisherRole>[INSERT_PBC_CHANNEL_NAME_ENG_ROLE]</publisherRole>
+            </pbcorePublisher>
+
+            <pbcorePublisher>
+                <publisher>[INSERT_PBC_CHANNEL_NAME_DK]</publisher>
+                <publisherRole>[INSERT_PBC_CHANNEL_NAME_DK_ROLE]</publisherRole>
+            </pbcorePublisher>
+
+            <pbcoreInstantiation>
+                <dateCreated>[INSERT_PBC_PRODUCTION_YEAR]</dateCreated>
+                <dateIssued></dateIssued>
+                <formatLocation></formatLocation>
+                <formatMediaType>[INSERT_PBC_MEDIA_TYPE]</formatMediaType>
+                <formatStandard>[INSERT_PBC_HD]</formatStandard>
+                <formatDuration>[INSERT_PBC_PROGRAM_LENGTH]</formatDuration>
+                <formatAspectRatio>[INSERT_PBC_SEKSTENNI_AND_OR_BREDFORMAT], </formatAspectRatio>
+                <formatColors>[INSERT_PBC_SH]</formatColors>
+                <formatChannelConfiguration>[INSERT_PBC_SURROUND]</formatChannelConfiguration>
+                <pbcoreDateAvailable>
+                    <dateAvailableStart>[INSERT_PBC_START_TIME]</dateAvailableStart>
+                    <dateAvailableEnd>[INSERT_PBC_END_TIME]</dateAvailableEnd>
+                </pbcoreDateAvailable>
+                <pbcoreFormatID>
+                    <formatIdentifier>[INSERT_PBC_FORMAT_ID]</formatIdentifier>
+                    <formatIdentifierSource>[INSERT_PBC_FORMAT_ID_SOURCE]</formatIdentifierSource>
+                </pbcoreFormatID>
+                <pbcoreAnnotation>
+                    <annotation>[INSERT_PBC_ANNOTATION]</annotation>
+                </pbcoreAnnotation>
+            </pbcoreInstantiation>
+
+            <pbcoreExtension>
+                <extension>antalepisoder:[INSERT_PBC_NUMBER_OF_EPISODES]</extension>
+            </pbcoreExtension>
+
+            <pbcoreExtension>
+                <extension>episodenr:[INSERT_PBC_EPISODE_NUMBER]</extension>
+            </pbcoreExtension>
+
+            <pbcoreExtension>
+                <extension>premiere:[INSERT_PBC_PREMIERE]</extension>
+            </pbcoreExtension>
+
+            <pbcoreExtension>
+                <extension>genudsendelse:[INSERT_PBC_REPEAT_BROADCAST]</extension>
+            </pbcoreExtension>
+
+            <pbcoreExtension>
+                <extension>hovedgenre_id:[INSERT_PBC_MAIN_GENRE_ID]</extension>
+            </pbcoreExtension>
+
+            <pbcoreExtension>
+                <extension>kanalid:[INSERT_PBC_CHANNEL_ID]</extension>
+            </pbcoreExtension>
+
+            <pbcoreExtension>
+                <extension>live:[INSERT_PBC_LIVE]</extension>
+            </pbcoreExtension>
+
+            <pbcoreExtension>
+                <extension>lydlink:[INSERT_PBC_SOUND_LINK]</extension>
+            </pbcoreExtension>
+
+            <pbcoreExtension>
+                <extension>produktionsland:[INSERT_PBC_PRODUCTION_COUNTRY]</extension>
+            </pbcoreExtension>
+
+            <pbcoreExtension>
+                <extension>produktionsland_id:[INSERT_PBC_PRODUCTION_COUNTRY_ID]</extension>
+            </pbcoreExtension>
+
+            <pbcoreExtension>
+                <extension>program_id:[INSERT_PBC_PROGRAM_ID]</extension>
+            </pbcoreExtension>
+
+            <pbcoreExtension>
+                <extension>program_ophold:[INSERT_PBC_PROGRAM_OPHOLD]</extension>
+            </pbcoreExtension>
+
+            <pbcoreExtension>
+                <extension>undergenre_id:[INSERT_PBC_SUB_GENRE_ID]</extension>
+            </pbcoreExtension>
+
+            <pbcoreExtension>
+                <extension>urllink:[INSERT_PBC_URL_LINK]</extension>
+            </pbcoreExtension>
+
+            <pbcoreExtension>
+                <extension>afsnit_id:[INSERT_PBC_AFSNIT_ID]</extension>
+            </pbcoreExtension>
+
+            <pbcoreExtension>
+                <extension>saeson_id:[INSERT_PBC_SEASON_ID]</extension>
+            </pbcoreExtension>
+
+            <pbcoreExtension>
+                <extension>serie_id:[INSERT_PBC_SERIE_ID]</extension>
+            </pbcoreExtension>
+
+            <pbcoreExtension>
+                <extension>tekstet:[INSERT_PBC_TEXTED]</extension>
+            </pbcoreExtension>
+
+            <pbcoreExtension>
+                <extension>th:[INSERT_PBC_TH]</extension>
+            </pbcoreExtension>
+
+            <pbcoreExtension>
+                <extension>ttv:[INSERT_PBC_TTV]</extension>
+            </pbcoreExtension>
+
+            <pbcoreExtension>
+                <extension>showviewcode:[INSERT_PBC_SHOWVIEWCODE]</extension>
+            </pbcoreExtension>
+
+        </PBCoreDescriptionDocument>
+    </pbcore>
+
+    <tvmeterAvailable>
+        [INSERT_TVMETER_AVAILABLE]
+    </tvmeterAvailable>
+</program>
