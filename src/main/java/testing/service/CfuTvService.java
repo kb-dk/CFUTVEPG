@@ -9,7 +9,6 @@ import testing.persistence.CfuTvHibernateUtil;
 import testing.persistence.NotInitialisedException;
 
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -25,33 +24,6 @@ import java.util.List;
  */
 public class CfuTvService {
     private final org.slf4j.Logger log = LoggerFactory.getLogger(getClass());
-
-    public void insert(RitzauProgram request) throws ServiceException{
-        if (request.getSluttid().after(request.getStarttid())) {
-            throw new ServiceException("fromTime (" + request.getStarttid() + ") must not be after toTime (" + request.getSluttid() + ")");
-        }
-        try {
-            getDao().create(request);
-        } catch (NotInitialisedException ex) {
-            throw new ServiceException(ex);
-        }
-    }
-
-    public void update(RitzauProgram request) throws ServiceException{
-        try {
-            getDao().update(request);
-        } catch (NotInitialisedException ex) {
-            throw new ServiceException(ex);
-        }
-    }
-
-    public void delete(RitzauProgram request) throws ServiceException{
-        try {
-            getDao().delete(request);
-        } catch (NotInitialisedException ex) {
-            throw new ServiceException(ex);
-        }
-    }
 
     public List<ReducedRitzauProgram> search(String channel_name, Date from, Date to, String title,
                                              String description) throws ServiceException{
@@ -79,7 +51,7 @@ public class CfuTvService {
         }
     }
 
-    public String getProgramSnippet(Long programId, String fileName) throws ServiceException{
+    public boolean getProgramSnippet(Long programId, String fileName) throws ServiceException{
         String xml = getFullPost(programId);
         try{
             FileWriter fstream = new FileWriter(GlobalData.getPathToFtpServer()+fileName+".xml");
@@ -89,7 +61,7 @@ public class CfuTvService {
         } catch(IOException ex){
             throw new ServiceException(ex);
         }
-        return xml;
+        return true;
     }
 
     private CfuTvDAO getDao() throws NotInitialisedException{

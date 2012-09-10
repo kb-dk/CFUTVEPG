@@ -82,6 +82,16 @@ public class CfuTvServlet {
     }
 
     @GET
+    @Path("/programSnippet")
+    @Produces("application/xml")
+    public boolean programSnippet(@QueryParam("id") String programIdRaw,
+                               @QueryParam("name") String filename,
+                               @QueryParam("offsetStart") String offsetStart,
+                               @QueryParam("offsetEnd") String offsetEnd){
+        return false;
+    }
+
+    @GET
     @Path("/test")
     @Produces("application/xml")
     public Response getTest(){

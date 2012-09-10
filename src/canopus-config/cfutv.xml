@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <!-- Path to hibernate configuration file -->
+    <Parameter name="hibernate_cfg"
+               value="/home/cfutv/services/conf/hibernate.cfg.xml"/>
+    <!-- Path to logback configuration file -->
+    <Parameter name="logback_cfg"
+               value="/home/cfutv/services/conf/logback.cfg.xml"/>
+    <!-- Where the PBCore template.xml is located -->
+    <Parameter name="template_location" value="/home/cfutv/services/conf/template.xml"/>
+    <!-- Which channels to search. Seperate with comma -->
+    <Parameter name="allowed_channels" value="dr1,tv2d"/>
+    <!-- How many days back -->
+    <Parameter name="days_back" value="28"/>
+</Context>
