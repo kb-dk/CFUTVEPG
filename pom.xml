@@ -112,12 +112,23 @@
             <artifactId>logback-classic</artifactId>
             <version>0.9.29</version>
         </dependency>
+
+        <!-- YouseeChannelMapping -->
+        <dependency>
+            <groupId>dk.statsbiblioteket.medieplatform</groupId>
+            <artifactId>yousee-channel-archiving-requester-core</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.1</version>
+        </dependency>
     </dependencies>
 
     <build>
-        <finalName>CFUTV</finalName>
+        <finalName>cfutv</finalName>
         <plugins>
-
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
@@ -131,8 +142,25 @@
                 <configuration>
                     <webXml>src\main\webapp\WEB-INF\web.xml</webXml>
                 </configuration>
-            </plugin>
-
+            </plugin><!--
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptors>
+                        <descriptor>src/main/assembly/assembly.xml</descriptor>
+                    </descriptors>
+                    <attach>true</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>-->
         </plugins>
     </build>
 

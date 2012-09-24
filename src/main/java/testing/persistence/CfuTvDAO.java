@@ -1,7 +1,8 @@
 package testing.persistence;
 
-import dk.statsbiblioteket.digitaltv.access.model.CompositeProgram;
 import dk.statsbiblioteket.digitaltv.access.model.RitzauProgram;
+import dk.statsbiblioteket.mediaplatform.ingest.model.persistence.GenericHibernateDAO;
+import dk.statsbiblioteket.mediaplatform.ingest.model.persistence.HibernateUtilIF;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.MatchMode;
@@ -20,10 +21,19 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class CfuTvDAO extends GenericHibernateDAO<RitzauProgram, Long> {
-    public CfuTvDAO(CfuTvHibernateUtil util){
+    public CfuTvDAO(HibernateUtilIF util){
         super(RitzauProgram.class, util);
     }
 
+    /**
+     * Search for RitzauPrograms in the database and return a list of programs matching input data.
+     * @param channel_name
+     * @param from
+     * @param to
+     * @param title
+     * @param description Kortomtale, langomtale1 eller langomtale2.
+     * @return List of RitzauPrograms matching input data
+     */
     public List<RitzauProgram> search(String channel_name, Date from, Date to, String title,
                                       String description){
         Criteria criteria = getSession().createCriteria(RitzauProgram.class);
@@ -34,7 +44,6 @@ public class CfuTvDAO extends GenericHibernateDAO<RitzauProgram, Long> {
         criteria.add(daysBack);
         if(channel_name != null && channel_name.trim().length() != 0){
             Criterion channel_criterion = Restrictions.eq("channel_name",channel_name);
-
             criteria.add(channel_criterion);
         }
         if(from != null){
@@ -64,21 +73,19 @@ public class CfuTvDAO extends GenericHibernateDAO<RitzauProgram, Long> {
         return (List<RitzauProgram>) criteria.addOrder(Order.asc("starttid")).list();
     }
 
+    /**
+     * Finds and returns a single RitzauProgram based on id.
+     * @param id which program.
+     * @return Found RitzauProgram.
+     */
     public RitzauProgram getByFullId(Long id){
         Criteria criteria = getSession().createCriteria(RitzauProgram.class);
+        Criterion daysBack = Restrictions.ge("starttid", GlobalData.getDaysBack());
+        criteria.add(daysBack);
         if(id != null){
-            Criterion id_criterion = Restrictions.eq("id",id);
+            Criterion id_criterion = Restrictions.eq("id", id);
             criteria.add(id_criterion);
         }
         return (RitzauProgram) criteria.uniqueResult();
-    }
-
-    public boolean hasTvmeter(Long id){
-        Criteria criteria = getSession().createCriteria(CompositeProgram.class);
-        if(id != null){
-            Criterion id_criterion = Restrictions.eq("ritzauProgram",id);
-            criteria.add(id_criterion);
-        }
-        return !((List<CompositeProgram>) criteria.list()).isEmpty();
     }
 }

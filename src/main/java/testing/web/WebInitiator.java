@@ -22,6 +22,13 @@ import java.util.Date;
 public class WebInitiator implements ServletContextListener {
     private Logger log;
 
+    /**
+     * Sets up the logger and hibernate.
+     * Sets path to PBCore template, which channels are to be searched and how many days back.
+     * Also where downloads go and the base part of the YouSee url.
+     * All setup information is retrieved from the config file.
+     * @param sce
+     */
     @Override
     public void contextInitialized(ServletContextEvent sce){
         //Logger
@@ -49,6 +56,14 @@ public class WebInitiator implements ServletContextListener {
         //PBCore template
         String templatePath = sce.getServletContext().getInitParameter("template_location");
         GlobalData.setPathToTemplate(templatePath);
+
+        //YouSee url
+        String youSeeUrl = sce.getServletContext().getInitParameter("youSeeUrl");
+        GlobalData.setYouSeeAccessUrl(youSeeUrl);
+
+        //Download destination
+        String downloadDestination = sce.getServletContext().getInitParameter("download_destination");
+        GlobalData.setDownloadDestination(downloadDestination);
 
         //Allowed channels
         String allowedChannels = sce.getServletContext().getInitParameter("allowed_channels");

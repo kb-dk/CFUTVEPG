@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context>
+<Context docBase="/home/cfutv/services/warfiles/cfutv.war">
     <!-- Path to hibernate configuration file -->
     <Parameter name="hibernate_cfg"
                value="/home/cfutv/services/conf/hibernate.cfg.xml"/>
@@ -7,9 +7,14 @@
     <Parameter name="logback_cfg"
                value="/home/cfutv/services/conf/logback.cfg.xml"/>
     <!-- Where the PBCore template.xml is located -->
-    <Parameter name="template_location" value="/home/cfutv/services/conf/template.xml"/>
-    <!-- Which channels to search. Seperate with comma -->
+    <Parameter name="template_location"
+               value="/home/cfutv/services/conf/template.xml"/>
+    <!-- Where we download the files from -->
+    <Parameter name="youSeeUrl" value="http://canopus/yousee-small/"/>
+    <!-- Download destination, target a directory not a file -->
+    <Parameter name="download_destination" value="/home/cfutv/download/"/>
+    <!-- Which channels to search. Separate with comma -->
     <Parameter name="allowed_channels" value="dr1,tv2d"/>
-    <!-- How many days back -->
+    <!-- How many days back a search is allowed to go -->
     <Parameter name="days_back" value="28"/>
 </Context>
