@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17fb7864-af29-4cad-bce8-b5b2a853c185" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__dk_statsbiblioteket_medieplatform_yousee_channel_archiving_requester_core_1_1_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/assembly/assembly.xml" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\src\main\java\testing\persistence\GenericHibernateDAO.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\src\main\java\testing\persistence\NotInitialisedException.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\src\main\java\testing\service\ServiceException.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\src\test\java\persistence\CfuTvDAOTest.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\src\test\java\persistence\CfuTvHibernateUtilTest.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\src\test\java\service\CfuTvServiceTest.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\src\test\java\service\PersistenceTestCase.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\src\main\config\template.xml" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\cfutv\WEB-INF\classes\testing\persistence\GenericHibernateDAO.class" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\cfutv\WEB-INF\classes\testing\persistence\NotInitialisedException.class" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\cfutv\WEB-INF\classes\testing\service\ServiceException.class" afterPath="" />
@@ -112,23 +104,15 @@
       <change type="MODIFICATION" beforePath="C:\Users\asj\workspace\CFUTV\target\cfutv\WEB-INF\classes\testing\service\CfuTvService.class" afterPath="$PROJECT_DIR$/target/cfutv/WEB-INF/classes/testing/service/CfuTvService.class" />
       <change type="MODIFICATION" beforePath="C:\Users\asj\workspace\CFUTV\target\cfutv\WEB-INF\classes\testing\web\CfuTvServlet.class" afterPath="$PROJECT_DIR$/target/cfutv/WEB-INF/classes/testing/web/CfuTvServlet.class" />
       <change type="MODIFICATION" beforePath="C:\Users\asj\workspace\CFUTV\target\cfutv\WEB-INF\classes\testing\web\WebInitiator.class" afterPath="$PROJECT_DIR$/target/cfutv/WEB-INF/classes/testing/web/WebInitiator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/CFUTV_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/CFUTV_war.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/CFUTV_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/CFUTV_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/testing/GlobalData.class" afterPath="$PROJECT_DIR$/target/classes/testing/GlobalData.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/testing/persistence/CfuTvDAO.class" afterPath="$PROJECT_DIR$/target/classes/testing/persistence/CfuTvDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/testing/persistence/CfuTvHibernateUtil.class" afterPath="$PROJECT_DIR$/target/classes/testing/persistence/CfuTvHibernateUtil.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/testing/service/CfuTvService.class" afterPath="$PROJECT_DIR$/target/classes/testing/service/CfuTvService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/testing/web/CfuTvServlet.class" afterPath="$PROJECT_DIR$/target/classes/testing/web/CfuTvServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/testing/web/WebInitiator.class" afterPath="$PROJECT_DIR$/target/classes/testing/web/WebInitiator.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CFUTV.iml" afterPath="$PROJECT_DIR$/CFUTV.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/derby.log" afterPath="$PROJECT_DIR$/derby.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/canopus-config/cfutv.xml" afterPath="$PROJECT_DIR$/src/canopus-config/cfutv.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/canopus-config/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/canopus-config/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/canopus-config/logback.cfg.xml" afterPath="$PROJECT_DIR$/src/canopus-config/logback.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/testing/GlobalData.java" afterPath="$PROJECT_DIR$/src/main/java/testing/GlobalData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/testing/persistence/CfuTvDAO.java" afterPath="$PROJECT_DIR$/src/main/java/testing/persistence/CfuTvDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/testing/persistence/CfuTvHibernateUtil.java" afterPath="$PROJECT_DIR$/src/main/java/testing/persistence/CfuTvHibernateUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/testing/service/CfuTvService.java" afterPath="$PROJECT_DIR$/src/main/java/testing/service/CfuTvService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/testing/web/CfuTvServlet.java" afterPath="$PROJECT_DIR$/src/main/java/testing/web/CfuTvServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/testing/web/WebInitiator.java" afterPath="$PROJECT_DIR$/src/main/java/testing/web/WebInitiator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
       <change type="MODIFICATION" beforePath="C:\Users\asj\workspace\CFUTV\target\cfutv\WEB-INF\web.xml" afterPath="$PROJECT_DIR$/target/cfutv/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
     </list>
     <ignored path="CFUTV.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -260,10 +244,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="assembly.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="assembly.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/assembly/assembly.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="10" selection-start="310" selection-end="310" vertical-scroll-proportion="0.071278825">
+            <state line="4" column="10" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PBCoreGenerator.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/testing/service/PBCoreGenerator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="206" column="32" selection-start="9848" selection-end="9848" vertical-scroll-proportion="5.137658">
               <folding />
             </state>
           </provider>
@@ -424,264 +417,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="CFUTV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CFUTV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CFUTV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="target" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CFUTV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CFUTV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CFUTV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CFUTV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CFUTV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CFUTV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CFUTV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CFUTV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CFUTV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CFUTV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CFUTV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CFUTV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CFUTV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CFUTV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CFUTV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CFUTV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="persistence" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CFUTV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CFUTV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CFUTV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CFUTV" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="canopus-config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1138,11 +873,11 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.4935065" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3297244" sideWeight="0.4935065" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.124355674" sideWeight="0.67027557" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.124355674" sideWeight="0.67027557" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23260309" sideWeight="0.67027557" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3375984" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1232,11 +967,6 @@
         <state line="14" column="13" selection-start="312" selection-end="312" vertical-scroll-proportion="0.18421052" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/testing/service/PBCoreGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="206" column="32" selection-start="9848" selection-end="9848" vertical-scroll-proportion="0.30733946" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/testing/persistence/CfuTvDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="76" column="60" selection-start="3439" selection-end="3439" vertical-scroll-proportion="1.9755352" />
@@ -1312,7 +1042,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/assembly/assembly.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="10" selection-start="310" selection-end="310" vertical-scroll-proportion="0.071278825">
+        <state line="4" column="10" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/testing/service/PBCoreGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="206" column="32" selection-start="9848" selection-end="9848" vertical-scroll-proportion="5.137658">
           <folding />
         </state>
       </provider>
