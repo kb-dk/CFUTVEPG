@@ -363,8 +363,8 @@ public class PBCoreGenerator {
         // Replace illegal characters with space
         textWithNoBadStuff = textWithNoBadStuff.replaceAll(illegalInXML, " ");
 
-        //return "<![CDATA[" + textWithNoBadStuff + "]]>";
-        return textWithNoBadStuff;
+        return "<![CDATA[" + textWithNoBadStuff + "]]>";
+        //return textWithNoBadStuff;
     }
 
     /**

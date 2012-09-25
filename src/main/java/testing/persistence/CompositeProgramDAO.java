@@ -6,10 +6,7 @@ import dk.statsbiblioteket.mediaplatform.ingest.model.persistence.GenericHiberna
 import dk.statsbiblioteket.mediaplatform.ingest.model.persistence.HibernateUtilIF;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Criterion;
-import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
-
-import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.

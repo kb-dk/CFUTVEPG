@@ -61,6 +61,9 @@ public class CfuTvServlet {
             } catch(ParseException ex){
                 log.debug("Date parse error: From: " + fromInput);
                 log.debug("Date parse error stacktrace: " + ex.getStackTrace());
+                String result = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
+                result += "<error code=\"400\">Bad Request: From could not be parsed. Use following format: yyyy-MM-dd_HH:mm</error>";
+                throw new WebApplicationException(Response.status(400).entity(result).build());
             }
         }
         if(toInput != null && toInput.trim().length() > 0){
@@ -69,11 +72,16 @@ public class CfuTvServlet {
             } catch(ParseException ex){
                 log.debug("Date parse error: To: " + toInput);
                 log.debug("Date parse error stacktrace: " + ex.getStackTrace());
+                String result = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
+                result += "<error code=\"400\">Bad Request: To could not be parsed. Use following format: yyyy-MM-dd_HH:mm</error>";
+                throw new WebApplicationException(Response.status(400).entity(result).build());
             }
         }
         if(from != null && to!=null){
             if(from.compareTo(to) > 0){
-                throw new InvalidIntervalException("from date " + from + " must be before to date " + to);
+                String result = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
+                result += "<error code=\"400\">Bad Request: From is not before To.</error>";
+                throw new WebApplicationException(Response.status(400).entity(result).build());
             }
         }
         try{
@@ -102,12 +110,19 @@ public class CfuTvServlet {
             try{
                 String result = service.getFullPost(programId);
                 log.info("----------------------FULLPOST SUCCESS--------------------");
+                if(result == null || result.trim().length() == 0){
+                    result = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
+                    result += "<error code=\"410\">No program found with that id.</error>";
+                    return Response.status(410).entity(result).build();
+                }
                 return Response.status(200).entity(result).build();
             } catch(ServiceException ex){
                 throw new WebApplicationException(ex,Response.Status.INTERNAL_SERVER_ERROR);
             }
         } catch(NumberFormatException ex){
-            throw new WebApplicationException(ex,Response.Status.BAD_REQUEST);
+            String result = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
+            result += "<error code=\"400\">Bad Request: Id can only be numbers.</error>";
+            return Response.status(400).entity(result).build();
         }
     }
 
@@ -186,6 +201,11 @@ public class CfuTvServlet {
                     String text = "Content unavailable, request cannot be fulfilled.";
                     log.info("-----------programSnippet exit with 410---------------" + statusCode);
                     return Response.status(statusCode).entity(text).build();
+                }
+                if(statusCode == -0){
+                    String text = "Program id not found.";
+                    log.info("-----------programSnippet exit with 410---------------" + statusCode);
+                    return Response.status(410).entity(text).build();
                 }
                 log.info("-----------programSnippet exit with 500, unexpected status code---------------" + statusCode);
                 return Response.status(500).entity("Unexpected status code.").build(); //Unexpected status code
@@ -333,10 +353,9 @@ public class CfuTvServlet {
     @Path("test")
     @Produces("application/xml")
     public Response getTest(){
-        int testVersion = 3;
         String output = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
         output += "<test><methodCalledTime>" + new Date() + "</methodCalledTime>";
-        output += "<version>"+testVersion+"</version></test>";
+        output += "</test>";
         log.info("getTest: " + output);
         return Response.status(200).entity(output).build();
     }
