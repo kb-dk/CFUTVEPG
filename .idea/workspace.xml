@@ -2,115 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17fb7864-af29-4cad-bce8-b5b2a853c185" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\src\main\config\template.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\cfutv\WEB-INF\classes\testing\persistence\GenericHibernateDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\cfutv\WEB-INF\classes\testing\persistence\NotInitialisedException.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\cfutv\WEB-INF\classes\testing\service\ServiceException.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\classes\testing\persistence\GenericHibernateDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\classes\testing\persistence\NotInitialisedException.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\classes\testing\service\ServiceException.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\db.lck" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\log\log.ctrl" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\log\log1.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\log\logmirror.ctrl" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c10.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c101.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c111.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c121.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c130.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c141.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c150.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c161.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c171.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c180.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c191.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c1a1.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c1b1.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c1c0.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c1d1.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c1e0.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c1f1.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c20.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c200.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c211.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c221.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c230.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c241.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c251.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c260.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c271.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c281.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c290.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c2a1.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c2b1.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c2c1.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c2d0.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c2e1.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c2f0.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c300.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c31.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c311.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c321.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c331.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c340.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c351.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c361.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c371.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c380.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c391.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c3a1.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c3b1.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c3c0.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c3d1.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c3e1.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c3f1.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c400.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c41.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c411.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c421.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c430.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c441.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c451.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c461.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c51.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c60.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c71.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c81.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\c90.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\ca1.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\cb1.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\cc0.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\cd1.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\ce1.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\seg0\cf0.dat" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\derbyDB\digitv_dev_db\service.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\surefire-reports\TEST-persistence.CfuTvDAOTest.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\surefire-reports\TEST-persistence.CfuTvHibernateUtilTest.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\surefire-reports\TEST-service.CfuTvServiceTest.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\surefire-reports\TEST-service.PersistenceTestCase.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\surefire-reports\persistence.CfuTvDAOTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\surefire-reports\persistence.CfuTvHibernateUtilTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\surefire-reports\service.CfuTvServiceTest.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\surefire-reports\service.PersistenceTestCase.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\test-classes\persistence\CfuTvDAOTest.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\test-classes\persistence\CfuTvHibernateUtilTest.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\test-classes\service\CfuTvServiceTest.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\asj\workspace\CFUTV\target\test-classes\service\PersistenceTestCase.class" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\asj\workspace\CFUTV\src\main\java\testing\service\pbcoreGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/testing/service/PBCoreGenerator.java" />
-      <change type="MOVED" beforePath="C:\Users\asj\workspace\CFUTV\target\CFUTV.war" afterPath="$PROJECT_DIR$/target/cfutv.war" />
-      <change type="MODIFICATION" beforePath="C:\Users\asj\workspace\CFUTV\target\cfutv\WEB-INF\classes\testing\GlobalData.class" afterPath="$PROJECT_DIR$/target/cfutv/WEB-INF/classes/testing/GlobalData.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\asj\workspace\CFUTV\target\cfutv\WEB-INF\classes\testing\persistence\CfuTvDAO.class" afterPath="$PROJECT_DIR$/target/cfutv/WEB-INF/classes/testing/persistence/CfuTvDAO.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\asj\workspace\CFUTV\target\cfutv\WEB-INF\classes\testing\persistence\CfuTvHibernateUtil.class" afterPath="$PROJECT_DIR$/target/cfutv/WEB-INF/classes/testing/persistence/CfuTvHibernateUtil.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\asj\workspace\CFUTV\target\cfutv\WEB-INF\classes\testing\service\CfuTvService.class" afterPath="$PROJECT_DIR$/target/cfutv/WEB-INF/classes/testing/service/CfuTvService.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\asj\workspace\CFUTV\target\cfutv\WEB-INF\classes\testing\web\CfuTvServlet.class" afterPath="$PROJECT_DIR$/target/cfutv/WEB-INF/classes/testing/web/CfuTvServlet.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\asj\workspace\CFUTV\target\cfutv\WEB-INF\classes\testing\web\WebInitiator.class" afterPath="$PROJECT_DIR$/target/cfutv/WEB-INF/classes/testing/web/WebInitiator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/testing/web/CfuTvServlet.class" afterPath="$PROJECT_DIR$/target/classes/testing/web/CfuTvServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CFUTV.iml" afterPath="$PROJECT_DIR$/CFUTV.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/testing/persistence/CompositeProgramDAO.java" afterPath="$PROJECT_DIR$/src/main/java/testing/persistence/CompositeProgramDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/testing/web/CfuTvServlet.java" afterPath="$PROJECT_DIR$/src/main/java/testing/web/CfuTvServlet.java" />
-      <change type="MODIFICATION" beforePath="C:\Users\asj\workspace\CFUTV\target\cfutv\WEB-INF\web.xml" afterPath="$PROJECT_DIR$/target/cfutv/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
     </list>
     <ignored path="CFUTV.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -176,7 +68,7 @@
       <file leaf-file-name="CfuTvServlet.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/testing/web/CfuTvServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="291" column="46" selection-start="14877" selection-end="14877" vertical-scroll-proportion="0.4028436">
+            <state line="291" column="46" selection-start="14877" selection-end="14877" vertical-scroll-proportion="0.017418033">
               <folding />
             </state>
           </provider>
@@ -194,7 +86,7 @@
       <file leaf-file-name="testPage.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/testPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="24" selection-start="632" selection-end="632" vertical-scroll-proportion="-9.153846">
+            <state line="17" column="24" selection-start="632" selection-end="632" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -316,16 +208,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -570,6 +452,16 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -604,9 +496,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -807,6 +699,24 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -833,24 +743,6 @@
       <envs />
       <properties />
       <listeners />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -889,6 +781,17 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -912,17 +815,6 @@
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -1020,8 +912,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="1176" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1616" height="1176" extended-state="7" />
+    <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1038,10 +930,10 @@
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12371134" sideWeight="0.66240156" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.123067014" sideWeight="0.66240156" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39948454" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23195876" sideWeight="0.66240156" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3375984" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23131444" sideWeight="0.66240156" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3375984" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297619" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1131,46 +1023,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/testing/persistence/CfuTvHibernateUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="13" selection-start="785" selection-end="785" vertical-scroll-proportion="0.28947368">
-          <folding />
-        </state>
+        <state line="21" column="13" selection-start="785" selection-end="785" vertical-scroll-proportion="0.28947368" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/testing/persistence/CompositeProgramDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="44" selection-start="450" selection-end="450" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="8" column="44" selection-start="450" selection-end="450" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/testing/service/PBCoreGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="207" column="42" selection-start="9901" selection-end="9901" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="207" column="42" selection-start="9901" selection-end="9901" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/canopus-config/cfutv.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="37" selection-start="972" selection-end="972" vertical-scroll-proportion="0.4473684">
-          <folding />
-        </state>
+        <state line="17" column="37" selection-start="972" selection-end="972" vertical-scroll-proportion="0.4473684" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/testing/web/InvalidIntervalException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="264" selection-end="264" vertical-scroll-proportion="0.28947368">
-          <folding />
-        </state>
+        <state line="12" column="13" selection-start="264" selection-end="264" vertical-scroll-proportion="0.28947368" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/testing/web/LogbackConfigLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="22" selection-end="22" vertical-scroll-proportion="0.05263158">
-          <folding />
-        </state>
+        <state line="2" column="0" selection-start="22" selection-end="22" vertical-scroll-proportion="0.05263158" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/testing/web/WebInitiator.java">
@@ -1180,44 +1058,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/testing/GlobalData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="31" selection-start="1473" selection-end="1473" vertical-scroll-proportion="1.4458205">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="55" column="31" selection-start="1473" selection-end="1473" vertical-scroll-proportion="1.4458205" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/testing/model/ReducedRitzauProgram.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="38" selection-start="62" selection-end="62" vertical-scroll-proportion="0.049535602">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/testPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="24" selection-start="632" selection-end="632" vertical-scroll-proportion="-9.153846">
-          <folding />
-        </state>
+        <state line="2" column="38" selection-start="62" selection-end="62" vertical-scroll-proportion="0.049535602" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/testing/persistence/CfuTvDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="73" selection-start="3714" selection-end="3714" vertical-scroll-proportion="0.6052632">
-          <folding />
-        </state>
+        <state line="82" column="73" selection-start="3714" selection-end="3714" vertical-scroll-proportion="0.6052632" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/testing/service/CfuTvService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="251" column="24" selection-start="11649" selection-end="11649" vertical-scroll-proportion="0.0">
+        <state line="251" column="24" selection-start="11649" selection-end="11649" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/testPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="24" selection-start="632" selection-end="632" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/testing/web/CfuTvServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="291" column="46" selection-start="14877" selection-end="14877" vertical-scroll-proportion="0.4028436">
+        <state line="291" column="46" selection-start="14877" selection-end="14877" vertical-scroll-proportion="0.017418033">
           <folding />
         </state>
       </provider>
