@@ -55,13 +55,14 @@
             <pbcoreGenre>
                 <genre>indhold_emne: [INSERT_PBC_TVMETER_CONTENTTYPE]</genre>
             </pbcoreGenre>
-
-            [INSERT_PBC_AUTHORS]
-
-            [INSERT_PBC_CONTRIBUTORS]
-
-            [INSERT_PBC_INSTRUCTORS]
-
+          
+            
+                        [INSERT_PBC_AUTHORS]
+            
+                        [INSERT_PBC_CONTRIBUTORS]
+            
+                        [INSERT_PBC_INSTRUCTORS]
+         
             <pbcorePublisher>
                 <publisher>[INSERT_PBC_CHANNEL_NAME_ENG]</publisher>
                 <publisherRole>[INSERT_PBC_CHANNEL_NAME_ENG_ROLE]</publisherRole>
@@ -79,7 +80,7 @@
                 <formatMediaType>[INSERT_PBC_MEDIA_TYPE]</formatMediaType>
                 <formatStandard>[INSERT_PBC_HD]</formatStandard>
                 <formatDuration>[INSERT_PBC_PROGRAM_LENGTH]</formatDuration>
-                <formatAspectRatio>[INSERT_PBC_SEKSTENNI_AND_OR_BREDFORMAT], </formatAspectRatio>
+                <formatAspectRatio>[INSERT_PBC_SEKSTENNI_AND_OR_BREDFORMAT]</formatAspectRatio>
                 <formatColors>[INSERT_PBC_SH]</formatColors>
                 <formatChannelConfiguration>[INSERT_PBC_SURROUND]</formatChannelConfiguration>
                 <pbcoreDateAvailable>
@@ -182,7 +183,6 @@
         </PBCoreDescriptionDocument>
     </pbcore>
 
-    <tvmeterAvailable>
-        [INSERT_TVMETER_AVAILABLE]
-    </tvmeterAvailable>
+    <tvmeterAvailable>[INSERT_TVMETER_AVAILABLE]</tvmeterAvailable>
+
 </program>

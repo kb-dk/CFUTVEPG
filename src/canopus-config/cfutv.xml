@@ -14,7 +14,7 @@
     <!-- Download destination, target a directory not a file -->
     <Parameter name="download_destination" value="/home/cfutv/download/"/>
     <!-- Which channels to search. Separate with comma -->
-    <Parameter name="allowed_channels" value="dr1,tv2d"/>
+    <Parameter name="allowed_channels" value="dr1,tv2d,tv3"/>
     <!-- How many days back a search is allowed to go -->
     <Parameter name="days_back" value="28"/>
 </Context>
