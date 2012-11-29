@@ -1,5 +1,6 @@
 package testing.service;
 
+import dk.statsbiblioteket.digitaltv.access.model.CompositeProgram;
 import dk.statsbiblioteket.digitaltv.access.model.RitzauProgram;
 import dk.statsbiblioteket.mediaplatform.ingest.model.YouSeeChannelMapping;
 import dk.statsbiblioteket.mediaplatform.ingest.model.persistence.NotInitialiasedException;
@@ -18,10 +19,13 @@ import testing.persistence.CompositeProgramDAO;
 
 import java.io.*;
 import java.nio.charset.Charset;
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+import java.util.TimeZone;
 
 /**
  * Created with IntelliJ IDEA.
@@ -117,13 +121,20 @@ public class CfuTvService {
         String youSeeChannelId = getYouSeeChannelId(sBChannelId, program.getStarttid());
         youSeeChannelId = youSeeChannelId.replaceAll(" ","%20"); //Replace space with http equivalent
         String channelUrlPart = youSeeChannelId + "_"; //ChannelId part of the url.
+        Date startTid;
+        Date slutTid;
+        if(compositeProgramDAO.hasTvMeter(program)){
+           	startTid = convertToUTC(compositeProgramDAO.getCorrespondingCompositeProgram(program).getTvmeterProgram().getStartDate());
+           	slutTid = convertToUTC(compositeProgramDAO.getCorrespondingCompositeProgram(program).getTvmeterProgram().getEndDate());
+        }else{
+        	startTid = convertToUTC(program.getStarttid());
+        	slutTid = convertToUTC(program.getSluttid());
+        }
         //offsetting start
-        Date startTid = program.getStarttid();
         startTid.setSeconds(startTid.getSeconds() - offsetStart.getSeconds());
         startTid.setMinutes(startTid.getMinutes() - offsetStart.getMinutes());
         startTid.setHours(startTid.getHours() - offsetStart.getHours());
         //offsetting end
-        Date slutTid = program.getSluttid();
         slutTid.setSeconds(slutTid.getSeconds() + offsetEnd.getSeconds());
         slutTid.setMinutes(slutTid.getMinutes() + offsetEnd.getMinutes());
         slutTid.setHours(slutTid.getHours() + offsetEnd.getHours());
@@ -162,8 +173,8 @@ public class CfuTvService {
         }
         youSeeChannelId = youSeeChannelId.replaceAll(" ","%20"); //Replace space with http equivalent
         String channelUrlPart = youSeeChannelId + "_"; //ChannelId part of the url.
-        String fromUrlPart = dateToUrlPart(from) + "_"; //From part of the url.
-        String toUrlPart = dateToUrlPart(to) + extension; //To part of the url.
+        String fromUrlPart = dateToUrlPart(convertToUTC(from)) + "_"; //From part of the url.
+        String toUrlPart = dateToUrlPart(convertToUTC(to)) + extension; //To part of the url.
         String downloadUrl = baseUrl + channelUrlPart + fromUrlPart + toUrlPart; //Putting the parts together.
         try {
             statusCode = downloadFileByStream(fileName, downloadUrl,null); //Actual file handling.
@@ -245,49 +256,11 @@ public class CfuTvService {
             throw new ServiceException(ex);
         }
         int statusCode = method.getStatusCode();
+        //------------------------------ TRÅD HERFRA
         if(statusCode == 200){ //StatusCode okay, downloading the file.
-            FileOutputStream writer;
-            try {
-                writer = new FileOutputStream(target);
-            } catch(FileNotFoundException ex){
-                //Clean up connection resources as the code won't proceed to where they are needed if it ends up here.
-                method.releaseConnection();
-                throw new ServiceException(ex);
-            }
-            byte[] buffer = new byte[153600];
-            int bytesRead;
-            int totalBytesRead = 0;
-            try{
-                while((bytesRead = reader.read(buffer)) > 0){
-                    writer.write(buffer,0,bytesRead);
-                    buffer = new byte[153600];
-                    totalBytesRead += bytesRead;
-                }
-            } catch (IOException ex){
-                throw new ServiceException(ex);
-            } finally {
-                try{
-                    writer.close();
-                    reader.close();
-                } catch(IOException ex){
-                    throw new ServiceException(ex);
-                } finally {
-                    method.releaseConnection(); //Clean up connection resources as they are no longer needed.
-                }
-            }
-            if(xml != null){
-                try{
-                    writer = new FileOutputStream(targetLocation+filename+".xml");
-                    buffer = xml.getBytes(Charset.forName("UTF-8"));
-                    writer.write(buffer,0,buffer.length);
-                    writer.close();
-                } catch (FileNotFoundException ex){
-                    throw new ServiceException(ex);
-                } catch(IOException ex){
-                    throw new ServiceException(ex);
-                }
-            }
+           new DownloadService(target, method, reader, xml, targetLocation, filename).start();
         }
+        //---------------------------- OG HERTIL
         return statusCode;
     }
 
@@ -314,13 +287,24 @@ public class CfuTvService {
             throw new ServiceException(ex);
         }
     }
+    
+    private Date convertToUTC(Date date){
+    	Locale locale = Locale.getDefault();
+	    TimeZone currentTimeZone = TimeZone.getDefault();
+	    DateFormat formatter = DateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.DEFAULT,locale);
+	    
+	    formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
+	    String utctime = formatter.format(date);
+	    Date utcDate = new Date(utctime);
+	    return utcDate;
+    }
 
     /**
      * Translates a date to a String that looks like part of the url needed to access the download web page.
      * @param date to be translated.
      * @return String that looks like part of the url needed to access the download web page.
      */
-    private String dateToUrlPart(Date date){
+    private String dateToUrlPart(Date date){  	
         String result = "";
         //Year
         int year = date.getYear() + 1900; //Adjust for date.getYears() getting years since 1900.

@@ -1,5 +1,7 @@
 package testing.persistence;
 
+import java.util.List;
+
 import dk.statsbiblioteket.digitaltv.access.model.CompositeProgram;
 import dk.statsbiblioteket.digitaltv.access.model.RitzauProgram;
 import dk.statsbiblioteket.mediaplatform.ingest.model.persistence.GenericHibernateDAO;
@@ -31,5 +33,21 @@ public class CompositeProgramDAO extends GenericHibernateDAO<RitzauProgram, Long
             }
         }
         return false;
+    }
+    /**
+     * Returns the single CompositeProgram corresponding to the given Ritzau Program if
+     * it exists or null otherwise.
+     * @param rp
+     * @return
+     */
+    public CompositeProgram getCorrespondingCompositeProgram(RitzauProgram rp) {
+        List<CompositeProgram> allCompositePrograms =  getSession().createQuery(
+                "from CompositeProgram where ritzauProgram = :rp")
+                .setParameter("rp", rp).list();
+        if (!allCompositePrograms.isEmpty()) {
+            return allCompositePrograms.get(0);
+        } else {
+            return null;
+        }
     }
 }

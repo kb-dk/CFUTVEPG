@@ -12,10 +12,10 @@ import java.util.List;
  */
 public class GlobalData{
     private static List<String> allowedChannels;
-    private static Date daysBack;
     private static String pathToTemplate;
     private static String youSeeAccessUrl;
     private static String downloadDestination;
+    private static String daysBackRaw;
 
     public static String getDownloadDestination() {
         return downloadDestination;
@@ -67,17 +67,20 @@ public class GlobalData{
 
     /**
      * Returns a Date telling how many days back a search is allowed to go.
-     * @return Date days back
+     * @return Date days back calculated every time
      */
     public static Date getDaysBack() {
+    	int daysBackInt = Integer.parseInt(daysBackRaw);
+        Date daysBack = new Date();
+        daysBack.setDate(daysBack.getDate()-daysBackInt);    	
         return daysBack;
     }
 
-    /**
-     * Set a Date telling how many days back a search is allowed to go.
-     * @param daysBack
-     */
-    public static void setDaysBack(Date daysBack) {
-        GlobalData.daysBack = daysBack;
-    }
+	public static String getDaysBackRaw() {
+		return daysBackRaw;
+	}
+
+	public static void setDaysBackRaw(String daysBackRaw) {
+		GlobalData.daysBackRaw = daysBackRaw;
+	}
 }
