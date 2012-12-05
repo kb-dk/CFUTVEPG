@@ -256,11 +256,9 @@ public class CfuTvService {
             throw new ServiceException(ex);
         }
         int statusCode = method.getStatusCode();
-        //------------------------------ TRÅD HERFRA
         if(statusCode == 200){ //StatusCode okay, downloading the file.
            new DownloadService(target, method, reader, xml, targetLocation, filename).start();
         }
-        //---------------------------- OG HERTIL
         return statusCode;
     }
 
