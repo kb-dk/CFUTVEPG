@@ -20,12 +20,7 @@ import testing.persistence.CompositeProgramDAO;
 import java.io.*;
 import java.nio.charset.Charset;
 import java.text.DateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
-import java.util.TimeZone;
+import java.util.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -63,12 +58,30 @@ public class CfuTvService {
                                              String description) throws ServiceException {
         try{
             List<RitzauProgram> fullPrograms = cfuTvDAO.search(channel_name, from, to, title, description);
-            List<ReducedRitzauProgram> result = new ArrayList<ReducedRitzauProgram>();
+            Map<Long, ReducedRitzauProgram> resultMap = new HashMap<Long, ReducedRitzauProgram>();
             for(RitzauProgram rp:fullPrograms){
-                result.add(new ReducedRitzauProgram(rp.getChannel_name(),rp.getId(),rp.getStarttid(),
-                        rp.getSluttid(),rp.getTitel(),rp.getKortomtale()));
+                if(resultMap.containsKey(rp.getProgram_id())){
+
+                    RitzauProgram program1 = cfuTvDAO.getByFullId(resultMap.get(rp.getProgram_id()).getId());
+                    RitzauProgram program2 = cfuTvDAO.getByFullId(rp.getId());
+                    boolean tvMeterAvailableForProgram1 = compositeProgramDAO.hasTvMeter(program1);
+                    boolean tvMeterAvailableForProgram2 = compositeProgramDAO.hasTvMeter(program2);
+
+                    if(tvMeterAvailableForProgram1 && tvMeterAvailableForProgram2 || !tvMeterAvailableForProgram1 && !tvMeterAvailableForProgram2){
+                        if(program1.getId() < program2.getId()){  //Choosing the one with the highest ID (newest)
+                            resultMap.put(rp.getProgram_id(), new ReducedRitzauProgram(rp.getChannel_name(),rp.getId(),rp.getStarttid(),
+                                    rp.getSluttid(),rp.getTitel(),rp.getKortomtale(), rp.getProgram_id()));
+                        }
+                    }else if(!tvMeterAvailableForProgram1 && tvMeterAvailableForProgram2){
+                        resultMap.put(rp.getProgram_id(), new ReducedRitzauProgram(rp.getChannel_name(),rp.getId(),rp.getStarttid(),
+                                rp.getSluttid(),rp.getTitel(),rp.getKortomtale(), rp.getProgram_id()));
+                    }
+                }else{
+                    resultMap.put(rp.getProgram_id(), new ReducedRitzauProgram(rp.getChannel_name(),rp.getId(),rp.getStarttid(),
+                            rp.getSluttid(),rp.getTitel(),rp.getKortomtale(), rp.getProgram_id()));
+                }
             }
-            return result;
+            return new ArrayList<ReducedRitzauProgram>(resultMap.values());
         } catch(NotInitialiasedException ex){
             throw new ServiceException(ex);
         }
@@ -124,11 +137,11 @@ public class CfuTvService {
         Date startTid;
         Date slutTid;
         if(compositeProgramDAO.hasTvMeter(program)){
-           	startTid = convertToUTC(compositeProgramDAO.getCorrespondingCompositeProgram(program).getTvmeterProgram().getStartDate());
-           	slutTid = convertToUTC(compositeProgramDAO.getCorrespondingCompositeProgram(program).getTvmeterProgram().getEndDate());
+            startTid = convertToUTC(compositeProgramDAO.getCorrespondingCompositeProgram(program).getTvmeterProgram().getStartDate());
+            slutTid = convertToUTC(compositeProgramDAO.getCorrespondingCompositeProgram(program).getTvmeterProgram().getEndDate());
         }else{
-        	startTid = convertToUTC(program.getStarttid());
-        	slutTid = convertToUTC(program.getSluttid());
+            startTid = convertToUTC(program.getStarttid());
+            slutTid = convertToUTC(program.getSluttid());
         }
         //offsetting start
         startTid.setSeconds(startTid.getSeconds() - offsetStart.getSeconds());
@@ -257,7 +270,7 @@ public class CfuTvService {
         }
         int statusCode = method.getStatusCode();
         if(statusCode == 200){ //StatusCode okay, downloading the file.
-           new DownloadService(target, method, reader, xml, targetLocation, filename).start();
+            new DownloadService(target, method, reader, xml, targetLocation, filename).start();
         }
         return statusCode;
     }
@@ -285,16 +298,16 @@ public class CfuTvService {
             throw new ServiceException(ex);
         }
     }
-    
+
     private Date convertToUTC(Date date){
-    	Locale locale = Locale.getDefault();
-	    TimeZone currentTimeZone = TimeZone.getDefault();
-	    DateFormat formatter = DateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.DEFAULT,locale);
-	    
-	    formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
-	    String utctime = formatter.format(date);
-	    Date utcDate = new Date(utctime);
-	    return utcDate;
+        Locale locale = Locale.getDefault();
+        TimeZone currentTimeZone = TimeZone.getDefault();
+        DateFormat formatter = DateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.DEFAULT,locale);
+
+        formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
+        String utctime = formatter.format(date);
+        Date utcDate = new Date(utctime);
+        return utcDate;
     }
 
     /**
@@ -302,7 +315,7 @@ public class CfuTvService {
      * @param date to be translated.
      * @return String that looks like part of the url needed to access the download web page.
      */
-    private String dateToUrlPart(Date date){  	
+    private String dateToUrlPart(Date date){
         String result = "";
         //Year
         int year = date.getYear() + 1900; //Adjust for date.getYears() getting years since 1900.

@@ -18,17 +18,19 @@ public class ReducedRitzauProgram {
     private Date sluttid;
     private String titel;
     private String kortomtale;
+    private Long program_id;
 
     public ReducedRitzauProgram(){}
 
     public ReducedRitzauProgram(String channel_name, Long id, Date starttid, Date sluttid,
-                                String titel, String kortomtale) {
+                                String titel, String kortomtale, Long program_id) {
         this.channel_name = channel_name;
         Id = id;
         this.starttid = starttid;
         this.sluttid = sluttid;
         this.titel = titel;
         this.kortomtale = kortomtale;
+        this.program_id = program_id;
     }
 
     public String getChannel_name() {
@@ -77,5 +79,13 @@ public class ReducedRitzauProgram {
 
     public void setKortomtale(String kortomtale) {
         this.kortomtale = kortomtale;
+    }
+
+    public Long getProgram_id(){
+        return program_id;
+    }
+
+    public void setProgram_id(Long program_id){
+        this.program_id = program_id;
     }
 }
