@@ -1,14 +1,11 @@
 package testing.persistence;
 
-import dk.statsbiblioteket.digitaltv.access.model.CompositeProgram;
-import dk.statsbiblioteket.digitaltv.access.model.RitzauProgram;
-import dk.statsbiblioteket.digitaltv.tvmeter.parser.TvmeterProgram;
-import dk.statsbiblioteket.mediaplatform.ingest.model.YouSeeChannelMapping;
 import dk.statsbiblioteket.mediaplatform.ingest.model.persistence.HibernateUtilIF;
 import dk.statsbiblioteket.mediaplatform.ingest.model.persistence.NotInitialiasedException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
+import testing.model.Program;
 
 import java.io.File;
 
@@ -43,10 +40,7 @@ public class CfuTvHibernateUtil implements HibernateUtilIF {
             try{
                 if(sessionFactory == null){
                     AnnotationConfiguration configuration = (new AnnotationConfiguration()).configure(cfgFile);
-                    configuration.addAnnotatedClass(RitzauProgram.class);
-                    configuration.addAnnotatedClass(YouSeeChannelMapping.class);
-                    configuration.addAnnotatedClass(TvmeterProgram.class);
-                    configuration.addAnnotatedClass(CompositeProgram.class);
+                    configuration.addAnnotatedClass(Program.class);
                     sessionFactory = configuration.buildSessionFactory();
                 }
             } catch (Throwable ex){

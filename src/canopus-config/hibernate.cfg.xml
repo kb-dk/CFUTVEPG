@@ -28,16 +28,18 @@
         derby properties
         -->
         <!-- Connection url to database -->
-        <property name="connection.url">jdbc:postgresql://digitv-test-acs.sb.statsbiblioteket.dk:5432/digitaltv</property>
-        <!-- Username for database connection -->
-        <property name="connection.username">cfutv-ro</property>
-        <!-- Password for database connection -->
-        <property name="connection.password">fe7Quoos</property>
-        <property name="hibernate.show_sql">false</property>
-        <property name="format_sql">false</property>
-
         <property name="connection.driver_class">org.postgresql.Driver</property>
         <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="connection.url">jdbc:postgresql://canopus:5432/cfutv-devel</property>
+        <!-- Username for database connection -->
+        <property name="connection.username">cfutv</property>
+        <!-- Password for database connection -->
+        <property name="connection.password">KAg25X103C</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="format_sql">false</property>
+        <mapping class="testing.model.Program"/>
+        <mapping class="testing.model.Program"/>
+        <mapping class="testing.model.Program"/>
 
         <!-- this will show us all sql statements -->
         <!--

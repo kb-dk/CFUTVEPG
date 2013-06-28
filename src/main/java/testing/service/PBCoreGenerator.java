@@ -6,6 +6,7 @@ import dk.statsbiblioteket.generic.utils.FaultException;
 import dk.statsbiblioteket.util.Files;
 import org.slf4j.LoggerFactory;
 import testing.GlobalData;
+import testing.model.Program;
 
 import java.io.File;
 import java.io.IOException;
@@ -31,14 +32,14 @@ public class PBCoreGenerator {
         UNKNOWN, VIDEO, AUDIO, SEVERAL
     }
 
-    public String generateXmlFromTemplate(RitzauProgram ritzauProgram, Boolean tvmeterAvailable){
-        if (ritzauProgram == null) {
+    public String generateXmlFromTemplate(Program program){
+        if (program == null) {
             log.debug("Entered method generateFileToHotfolderFromTemplate"
                     + " with a null ritzauProgram!");
             return null;
         }
         log.debug("Entered method generateXmlFromTemplate('"
-                + "RitzauProgram{" + ritzauProgram.getTitel() + "}')");
+                + "Prgrogram{" + program.getTitle() + "}')");
         File templateFile;
         String templateWorkingCopy;
 
@@ -54,7 +55,7 @@ public class PBCoreGenerator {
         // Fill out template
         templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
                 "[INSERT_PBC_ID]",
-                Long.toString(ritzauProgram.getId()) + "RitzauProgram");
+                Integer.toString(program.getId()));
         // Though the metadata will be a mix of ritzau and gallup data,
         // the gallup data were found through a compositeprogram found
         // from a ritzau id, so we let the ritzau id be the id of the
@@ -64,50 +65,15 @@ public class PBCoreGenerator {
                 "id");
 
         templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_NUMBER_OF_EPISODES]",
-                Long.toString(ritzauProgram.getAntalepisoder()));
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_EPISODE_NUMBER]",
-                Long.toString(ritzauProgram.getEpisodenr()));
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_REPEAT_BROADCAST]",
-                (ritzauProgram.isGenudsendelse() ? "genudsendelse"
-                        : "ikke genudsendelse"));
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_LIVE]",
-                (ritzauProgram.isLive() ? "live" : "ikke live"));
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_PRODUCTION_COUNTRY]",
-                ritzauProgram.getProduktionsland());
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_PROGRAM_OPHOLD]",
-                (ritzauProgram.getProgram_ophold() ? "program ophold"
-                        : "ikke program ophold"));
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_AFSNIT_ID]",
-                Long.toString(ritzauProgram.getAfsnit_id()));
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_SEASON_ID]",
-                Long.toString(ritzauProgram.getSaeson_id()));
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
                 "[INSERT_PBC_SERIE_ID]",
-                Long.toString(ritzauProgram.getSerie_id()));
+                program.getExtra());
 
         templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_PROGRAM_ID]",
-                Long.toString(ritzauProgram.getProgram_id()));
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
                 "[INSERT_PBC_MAIN_GENRE_ID]",
-                Long.toString(ritzauProgram.getHovedgenre_id()));
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_SUB_GENRE_ID]",
-                Long.toString(ritzauProgram.getUndergenre_id()));
+                program.getCategory());
         templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
                 "[INSERT_PBC_CHANNEL_ID]",
-                Integer.toString(ritzauProgram.getKanalId()));
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_PRODUCTION_COUNTRY_ID]",
-                Integer.toString(ritzauProgram.getProduktionsland_id()));
+                program.getChannelName());
 
         // From query:
         //   digitaltv=> select titel, maintitle from compositeprogram,
@@ -118,155 +84,59 @@ public class PBCoreGenerator {
         // (and more consistently formatted) than Gallup TVMeter "maintitle".
         templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
                 "[INSERT_PBC_TITLE]",
-                ritzauProgram.getTitel());
+                program.getTitle());
         templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
                 "[INSERT_PBC_TITLE_TYPE]",
                 "titel");
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_ORIGINAL_TITLE]",
-                ritzauProgram.getOriginaltitel());
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_TITLE_ORIGINAL]",
-                "originaltitel");
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_EPISODE_TITLE]",
-                ritzauProgram.getEpisodetitel());
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_TITLE_EPISODE]",
-                "episodetitel");
-        // Gallup tvmeter "sub title" and "original title" could possibly
-        // augment the above.
 
         // Ritzau descriptions are more informative that Gallup TVMeter desc's
         templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
                 "[INSERT_PBC_SHORT_DESCRIPTION]",
-                ritzauProgram.getKortomtale());
+                program.getReduceddescription());
         templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
                 "[INSERT_PBC_DESCRIPTION_SHORT]",
                 "kortomtale");
         templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
                 "[INSERT_PBC_LONG_DESCRIPTION_1]",
-                ritzauProgram.getLangomtale1());
+                program.getDescription());
         templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
                 "[INSERT_PBC_DESCRIPTION_LONG_1]",
                 "langomtale1");
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_LONG_DESCRIPTION_2]",
-                ritzauProgram.getLangomtale2());
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_DESCRIPTION_LONG_2]",
-                "langomtale2");
 
         templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
                 "[INSERT_PBC_MAIN_GENRE]",
-                ritzauProgram.getHovedgenre());
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_SUB_GENRE]",
-                ritzauProgram.getUndergenre());
+                program.getCategory());
         templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
                 "[INSERT_PBC_TVMETER_CONTENTTYPE]",
                 "");
 
         templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_URL_LINK]",
-                ritzauProgram.getUrllink());
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_SOUND_LINK]",
-                ritzauProgram.getLydlink());
-
-        templateWorkingCopy = insertNormalizedAuthors(ritzauProgram,
-                templateWorkingCopy);
-
-        templateWorkingCopy = insertNormalizedContributors(ritzauProgram,
-                templateWorkingCopy);
-
-        templateWorkingCopy = insertNormalizedInstruction(ritzauProgram,
-                templateWorkingCopy);
-
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
                 "[INSERT_PBC_CHANNEL_NAME_DK]",
-                ritzauProgram.getKanalnavn());
+                program.getChannelName());
         templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
                 "[INSERT_PBC_CHANNEL_NAME_DK_ROLE]",
                 "kanalnavn");
 
         templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
                 "[INSERT_PBC_CHANNEL_NAME_ENG]",
-                ritzauProgram.getChannel_name());
+                program.getChannelName());
         templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
                 "[INSERT_PBC_CHANNEL_NAME_ENG_ROLE]",
                 "channel_name");
 
         templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_PRODUCTION_YEAR]",
-                Long.toString(ritzauProgram.getProduktionsaar()));
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_PREMIERE]",
-                (ritzauProgram.isPremiere() ? "premiere" : "ikke premiere"));
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_MEDIA_TYPE]",
-                "TODO _ SET MEDIATYPE");//TODO SET MEDIATYPE
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                    "[INSERT_PBC_HD]",
-                (ritzauProgram.isHd() ? "hd" : "ikke hd"));
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
                 "[INSERT_PBC_PROGRAM_LENGTH]",
-                Long.toString(ritzauProgram.getProgramlaengde()));
-
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_SURROUND]",
-                (ritzauProgram.isSurround() ? "surround" : "ikke surround"));
-
-        if (ritzauProgram.isSekstenni() && !ritzauProgram.isBredformat()) {
-            templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                    "[INSERT_PBC_SEKSTENNI_AND_OR_BREDFORMAT]", "16:9");
-        } else if (!ritzauProgram.isSekstenni() && ritzauProgram.isBredformat()) {
-            templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                    "[INSERT_PBC_SEKSTENNI_AND_OR_BREDFORMAT]", "bredformat");
-        } else if (ritzauProgram.isSekstenni() && ritzauProgram.isBredformat()) {
-            templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                    "[INSERT_PBC_SEKSTENNI_AND_OR_BREDFORMAT]",
-                    "16:9, bredformat");
-        } else {
-            // !ritzauProgram.isSekstenni() && !ritzauProgram.isBredformat()
-            templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                    "[INSERT_PBC_SEKSTENNI_AND_OR_BREDFORMAT]", "");
-        }
-
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_SH]",
-                (ritzauProgram.isSh() ? "sort/hvid" : "farve"));
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_TEXTED]",
-                (ritzauProgram.isTekstet() ? "tekstet" : "ikke tekstet"));
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_TH]",
-                (ritzauProgram.isTh() ? "tekstet for hørehæmmede"
-                        : "ikke tekstet for hørehæmmede"));
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_TTV]",
-                (ritzauProgram.isTtv() ? "tekst-tv" : "ikke tekst-tv"));
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_SHOWVIEWCODE]",
-                Long.toString(ritzauProgram.getShowviewcode()));
+                program.getScheduledduration());
 
         // This will be Ritzau data (for web-frontend reasons), not TVMeter.
         templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
                 "[INSERT_PBC_START_TIME]",
-                formatDate(ritzauProgram.getStarttid()));
+                formatDate(program.getScheduledstart()));
         // Rather than tvmeterProgram.getStartDate()
         templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
                 "[INSERT_PBC_END_TIME]",
-                formatDate(ritzauProgram.getSluttid()));
+                formatDate(program.getScheduledend()));
         // Rather than tvmeterProgram.getEndDate()
-
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_PBC_ANNOTATION]",
-                ritzauProgram.getAnnotation());
-
-        //Is there tvmeter data?
-        templateWorkingCopy = replaceEnclosedInCdata(templateWorkingCopy,
-                "[INSERT_TVMETER_AVAILABLE]", tvmeterAvailable.toString());
 
         return templateWorkingCopy;
     }

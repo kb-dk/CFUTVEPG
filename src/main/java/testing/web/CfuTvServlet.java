@@ -1,11 +1,10 @@
 package testing.web;
 
-import dk.statsbiblioteket.mediaplatform.ingest.model.service.ServiceException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import testing.GlobalData;
-import testing.model.ReducedRitzauProgram;
+import testing.model.Program;
 import testing.service.CfuTvService;
 
 import javax.servlet.ServletOutputStream;
@@ -15,7 +14,6 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -58,7 +56,7 @@ public class CfuTvServlet {
 	@GET
 	@Path("search")
 	@Produces(MediaType.APPLICATION_XML)
-	public List<ReducedRitzauProgram> search(@QueryParam("channelName") String channel_name,
+	public List<Program> search(@QueryParam("channelName") String channel_name,
 			@QueryParam("from") String fromInput,
 			@QueryParam("to") String toInput,
 			@QueryParam("title") String title,
@@ -95,11 +93,9 @@ public class CfuTvServlet {
 				throw new WebApplicationException(Response.status(400).entity(result).build());
 			}
 		}
-		try{
-			return service.search(channel_name,from,to,title,description);
-		} catch(ServiceException ex){
-			throw new WebApplicationException(ex,Response.Status.INTERNAL_SERVER_ERROR);
-		}
+        return service.search(channel_name, from, to, title, description);
+		//log.info(programmer.get(0).getTitle());
+        //return programmer;
 	}
 
 	/**
@@ -117,8 +113,7 @@ public class CfuTvServlet {
 			return Response.status(400).entity(result).build();
 		}
 		try{
-			Long programId = Long.parseLong(programIdRaw);
-			try{
+			Integer programId = Integer.parseInt(programIdRaw);
 				String result = service.getFullPost(programId);
 				log.info("----------------------FULLPOST SUCCESS--------------------");
 				if(result == null || result.trim().length() == 0){
@@ -127,9 +122,6 @@ public class CfuTvServlet {
 					return Response.status(410).entity(result).build();
 				}
 				return Response.status(200).entity(result).build();
-			} catch(ServiceException ex){
-				throw new WebApplicationException(ex,Response.Status.INTERNAL_SERVER_ERROR);
-			}
 		} catch(NumberFormatException ex){
 			String result = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
 			result += "<error code=\"400\">Bad Request: Id can only be numbers.</error>";
@@ -185,8 +177,7 @@ public class CfuTvServlet {
 			return Response.status(400).entity(text).build();
 		}
 		try{
-			Long programId = Long.parseLong(programIdRaw);
-			try{
+			Integer programId = Integer.parseInt(programIdRaw);
 				int statusCode = service.getProgramSnippet(programId, filename, offsetStart, offsetEnd);
 				if(statusCode == 200){
 					String text = "OK";
@@ -220,10 +211,6 @@ public class CfuTvServlet {
 				}
 				log.info("-----------programSnippet exit with 500, unexpected status code---------------" + statusCode);
 				return Response.status(500).entity("Unexpected status code.").build(); //Unexpected status code
-			} catch(ServiceException ex){
-				log.info("-----------programSnippet exit with 500, internal server---------------" + ex.getMessage(), ex);
-				return Response.status(500).entity("Internal server error.").build();
-			}
 		} catch(NumberFormatException ex){
 			log.info("-----------programSnippet exit with 400, invalid program id---------------");
 			return Response.status(400).entity("Invalid program id, must only contain numbers.").build();
@@ -280,7 +267,6 @@ public class CfuTvServlet {
 		if(from.after(to)){
 			return Response.status(400).entity("From must be before To.").build();
 		}
-		try{
 			int statusCode = service.getRawCut(channel,filename,from,to);
 			if(statusCode == 200){
 				String text = "OK";
@@ -309,10 +295,6 @@ public class CfuTvServlet {
 			}
 			log.info("-----------rawCut exit with 500, unexpected status code---------------" + statusCode);
 			return Response.status(500).entity("Unexpected status code.").build(); //Unexpected status code
-		} catch(ServiceException ex){
-			log.info("-----------rawCut exit with 500, internal server---------------" + ex.getMessage(), ex);
-			return Response.status(500).entity("Internal server error.").build();
-		}
 	}
 
 	/**

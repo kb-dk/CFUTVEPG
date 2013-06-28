@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>testPage</title>
+</head>
+<body>
+<form name="test" method="GET" action="metadata/test">
+    <input type="submit" value="Test" >
+</form>
+<form name="search" method="GET" action="metadata/search">
+    <table border="0">
+        <tr><th colspan="2" align="left">Search</th></tr>
+        <tr>
+            <td>ChannelName:<input type="text" name="channelName"></td>
+            <td>From:<input type="text" name="from"></td>
+            <td>To:<input type="text" name="to"></td>
+            <td>Title:<input type="text" name="title"></td>
+            <td>Description:<input type="text" name="description"></td>
+            <td>
+                <input type="submit" value="Get" >
+            </td>
+        </tr>
+    </table>
+</form>
+<table border="1">
+    <tr>
+        <td>
+            <a href="/cfutv/metadata/search?channelName=&from=&to=&title=nyhed&description=">Example: Title = nyhed</a>
+        </td>
+        <td>
+            <a href="/cfutv/metadata/search?channelName=tv2d&from=&to=&title=nyhed&description=">Example: Title = nyhed, Channel = tv2d</a>
+        </td>
+        <td>
+            <a href="/cfutv/metadata/search?channelName=&from=&to=&title=&description=dansk">Example: Description = dansk</a>
+        </td>
+        <td>
+            <a href="/cfutv/metadata/search?channelName=&from=&to=&title=&description=Amerikansk%20romantisk%20komedieserie">Example: description = Amerikansk romantisk komedieserie </a>
+        </td>
+        <td>
+            <a href="/cfutv/metadata/search?channelName=&from=2012-09-24_00%3A00&to=2012-09-25_15%3A35&title=&description=">Example (will be outdated: 2012-10-22) from = 2012-09-24_00:00 to = 2012-09-25_15:35 </a>
+        </td>
+    </tr>
+</table>
+<form name="fullpost" method="GET" action="metadata/fullpost">
+    <table border="0">
+        <tr><th colspan="2" align="left">Fullpost:</th></tr>
+        <tr>
+            <td>Id:<input type="text" name="id"></td>
+            <td>
+                <input type="submit" value="Get" >
+            </td>
+        </tr>
+    </table>
+</form>
+<form name="programSnippet" method="GET" action="metadata/programSnippet">
+    <table border="0">
+        <tr><th colspan="2" align="left">ProgramSnippet:</th></tr>
+        <tr>
+            <td>Id:<input type="text" name="id"></td>
+            <td>Filename:<input type="text" name="filename"></td>
+            <td>OffsetStart:<input type="text" name="offsetStart"></td>
+            <td>OffsetEnd:<input type="text" name="offsetEnd"></td>
+            <td>
+                <input type="submit" value="Get" >
+            </td>
+        </tr>
+    </table>
+</form>
+<form name="rawCut" method="GET" action="metadata/rawCut">
+    <table border="0">
+        <tr><th colspan="2" align="left">rawCut</th></tr>
+        <tr>
+            <td>Channel:<input type="text" name="channel"></td>
+            <td>Filename:<input type="text" name="filename"></td>
+            <td>From:<input type="text" name="from"></td>
+            <td>To:<input type="text" name="to"></td>
+            <td>
+                <input type="submit" value="Get" >
+            </td>
+        </tr>
+    </table>
+</form>
+<form name="status" method="GET" action="metadata/status">
+    <table border="0">
+        <tr><th colspan="2" align="left">status</th></tr>
+        <tr>
+            <td>Filename (optional):<input type="text" name="filename"></td>
+            <td>
+                <input type="submit" value="Get" >
+            </td>
+    </table>
+</form>
+
+<form name="fileDownload" method="GET" action="metadata/fileDownload">
+    <table border="0">
+        <tr><th colspan="2" align="left">File Download</th></tr>
+        <tr>
+            <td>Filename:<input type="text" name="filename"></td>
+            <td>
+                <input type="submit" value="Get" >
+            </td>
+    </table>
+</form>
+
+</body>
+</html>

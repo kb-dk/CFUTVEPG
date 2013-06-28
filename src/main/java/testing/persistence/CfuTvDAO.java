@@ -1,14 +1,11 @@
 package testing.persistence;
 
-import dk.statsbiblioteket.digitaltv.access.model.RitzauProgram;
-import dk.statsbiblioteket.mediaplatform.ingest.model.persistence.GenericHibernateDAO;
-import dk.statsbiblioteket.mediaplatform.ingest.model.persistence.HibernateUtilIF;
 import org.hibernate.Criteria;
+import org.hibernate.Session;
 import org.hibernate.criterion.Criterion;
-import org.hibernate.criterion.MatchMode;
-import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import testing.GlobalData;
+import testing.model.Program;
 
 import java.util.Date;
 import java.util.List;
@@ -20,11 +17,7 @@ import java.util.List;
  * Time: 11:16
  * To change this template use File | Settings | File Templates.
  */
-public class CfuTvDAO extends GenericHibernateDAO<RitzauProgram, Long> {
-    public CfuTvDAO(HibernateUtilIF util){
-        super(RitzauProgram.class, util);
-    }
-
+public class CfuTvDAO{
     /**
      * Search for RitzauPrograms in the database and return a list of programs matching input data.
      * @param channel_name
@@ -34,43 +27,38 @@ public class CfuTvDAO extends GenericHibernateDAO<RitzauProgram, Long> {
      * @param description Kortomtale, langomtale1 eller langomtale2.
      * @return List of RitzauPrograms matching input data
      */
-    public List<RitzauProgram> search(String channel_name, Date from, Date to, String title,
+    public List<Program> search(String channel_name, Date from, Date to, String title,
                                       String description){
-        Criteria criteria = getSession().createCriteria(RitzauProgram.class);
+        Session session = CfuTvHibernateUtil.getInitialisedFactory().getSession();
+        Criteria criteria = session.createCriteria(Program.class);
+
         List<String> list = GlobalData.getAllowedChannels();
-        Criterion sbChannelId = Restrictions.in("channel_name",list);
+        Criterion sbChannelId = Restrictions.in("channelName",list);
         criteria.add(sbChannelId);
-        Criterion daysBack = Restrictions.ge("starttid", GlobalData.getDaysBack());
+        Criterion daysBack = Restrictions.ge("scheduledstart", GlobalData.getDaysBack());
         criteria.add(daysBack);
         if(channel_name != null && channel_name.trim().length() != 0){
-            Criterion channel_criterion = Restrictions.eq("channel_name",channel_name);
+            Criterion channel_criterion = Restrictions.eq("channelName",channel_name);
             criteria.add(channel_criterion);
         }
         if(from != null){
-            Criterion from_criterion = Restrictions.ge("starttid",from);
+            Criterion from_criterion = Restrictions.ge("scheduledstart",from);
             criteria.add(from_criterion);
         }
         if(to != null){
-            Criterion to_criterion = Restrictions.le("starttid", to);
+            Criterion to_criterion = Restrictions.le("scheduledend", to);
             criteria.add(to_criterion);
         }
         if(title != null && title.trim().length() != 0){
-            Criterion title_criterion = Restrictions.ilike("titel",
-                    MatchMode.ANYWHERE.toMatchString(title), MatchMode.ANYWHERE);
+            Criterion title_criterion = Restrictions.or(Restrictions.like("title", "%"+title+"%"),Restrictions.like("reducedtitle", "%"+title+"%"));
             criteria.add(title_criterion);
         }
         if(description != null && description.trim().length() != 0){
-            Criterion description_criterion1 = Restrictions.ilike("langomtale1",
-                    MatchMode.ANYWHERE.toMatchString(description), MatchMode.ANYWHERE);
-            Criterion description_criterion2 = Restrictions.ilike("kortomtale",
-                    MatchMode.ANYWHERE.toMatchString(description), MatchMode.ANYWHERE);
-            Criterion description_criterion3 = Restrictions.ilike("langomtale2",
-                    MatchMode.ANYWHERE.toMatchString(description), MatchMode.ANYWHERE);
-            Criterion joint_description_criterion = Restrictions.or(description_criterion1,
-                    Restrictions.or(description_criterion2, description_criterion3));
-            criteria.add(joint_description_criterion);
+            Criterion description_criterion1 = Restrictions.or(Restrictions.like("description","%"+description+"%"),Restrictions.like("reduceddescription","%"+description+"%"));
+            criteria.add(description_criterion1);
         }
-        return (List<RitzauProgram>) criteria.addOrder(Order.asc("starttid")).list();
+
+        return (List<Program>) criteria.list();
     }
 
     /**
@@ -78,14 +66,14 @@ public class CfuTvDAO extends GenericHibernateDAO<RitzauProgram, Long> {
      * @param id which program.
      * @return Found RitzauProgram.
      */
-    public RitzauProgram getByFullId(Long id){
-        Criteria criteria = getSession().createCriteria(RitzauProgram.class);
-        Criterion daysBack = Restrictions.ge("starttid", GlobalData.getDaysBack());
+    public Program getByFullId(Integer id){
+        Criteria criteria = CfuTvHibernateUtil.getInitialisedFactory().getSession().createCriteria(Program.class);
+        Criterion daysBack = Restrictions.ge("scheduledstart", GlobalData.getDaysBack());
         criteria.add(daysBack);
         if(id != null){
             Criterion id_criterion = Restrictions.eq("id", id);
             criteria.add(id_criterion);
         }
-        return (RitzauProgram) criteria.uniqueResult();
+        return (Program) criteria.uniqueResult();
     }
 }
