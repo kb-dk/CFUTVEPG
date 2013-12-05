@@ -59,4 +59,5 @@
     <channel channel_name="regtvfyn" ys_epg="FYN" ys_download="REGFYN" />
     <channel channel_name="regtvbornholm" ys_epg="BORNHO" ys_download="REGBORN" />
     <channel channel_name="regtvost" ys_epg="ØST" ys_download="REGOST" />
+    <channel channel_name="tv3sport2hd" ys_epg="3Sp2" ys_download="3SP2HD" />
 </channels>
