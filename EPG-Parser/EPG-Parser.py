@@ -121,17 +121,20 @@ for schedule in root.findall("./listings/schedules/s"):
                 names = names + ", " + namesdict.get(id.get('n')).get('fname').encode('utf-8', 'xmlcharrefreplace')
     except AttributeError:
         names = None
+    try:
+        category = categoriesDict.get(program.find('c').get('id')).get('mscname')
 
-    category = categoriesDict.get(program.find('c').get('id')).get('mscname')
+        ys_epg = channelDict.get(schedule.get('c')).get('c')
+        channel=channelMapDict.get(ys_epg).get('channel_name')
+        ys_download=channelMapDict.get(ys_epg).get('ys_download')
 
-    ys_epg = channelDict.get(schedule.get('c')).get('c')
-    channel=channelMapDict.get(ys_epg).get('channel_name')
-    ys_download=channelMapDict.get(ys_epg).get('ys_download')
+        scheduledend = datetime.datetime.strptime(schedule.get('s'), "%Y-%m-%dT%H:%M:%S")+datetime.timedelta(0,int(schedule.get('d')))
 
-    scheduledend = datetime.datetime.strptime(schedule.get('s'), "%Y-%m-%dT%H:%M:%S")+datetime.timedelta(0,int(schedule.get('d')))
-
-    data = (program.get('id'), program.get('t', 'None'), program.get('rt', 'None'), program.get('d', 'None'), program.get('rd', 'None'), program.get('et', 'None'), program.get('l', 'None'), program.get('forfra', 'None'), program.get('arkiv', 'None'), program.get('DVB', 'None'), category, names, extra, schedule.get('s', 'None'), schedule.get('d', 'None'), scheduledend.strftime("%Y-%m-%dT%H:%M:%S"), channel, ys_epg, ys_download, schedule.get('y'), True)
-    cursor.execute(sqlquery, data)
+        data = (program.get('id'), program.get('t', 'None'), program.get('rt', 'None'), program.get('d', 'None'), program.get('rd', 'None'), program.get('et', 'None'), program.get('l', 'None'), program.get('forfra', 'None'), program.get('arkiv', 'None'), program.get('DVB', 'None'), category, names, extra, schedule.get('s', 'None'), schedule.get('d', 'None'), scheduledend.strftime("%Y-%m-%dT%H:%M:%S"), channel, ys_epg, ys_download, schedule.get('y'), True)
+        cursor.execute(sqlquery, data)
+    except AttributeError:
+        print "Channel "+str(ys_epg)+" doesn't exist"
+        #If channel doesn't exist
 
 print "[INFO]: Deleting programs that was removed from EPG"
 cursor.execute ("SELECT COUNT(*) FROM programs WHERE checked='false'")
