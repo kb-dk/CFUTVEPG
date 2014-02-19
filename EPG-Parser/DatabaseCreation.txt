@@ -1,0 +1,34 @@
+/*Create program table*/
+CREATE TABLE programs (
+    id        INTEGER NOT NULL PRIMARY KEY,
+    title		  VARCHAR,
+    reducedTitle		  VARCHAR,
+    description		  VARCHAR,
+    reducedDescription 		  VARCHAR,
+    episodeTitle		  VARCHAR,
+    language         VARCHAR,
+    forfra    VARCHAR,
+    arkiv     INTEGER,
+    DVB       INTEGER,
+    category VARCHAR,
+    actors VARCHAR,
+    extra    VARCHAR,
+    scheduledstart  TIMESTAMP,
+    scheduledDuration		  VARCHAR,
+    scheduledend TIMESTAMP,
+    channel_name VARCHAR,
+    ys_epg VARCHAR,
+    ys_download VARCHAR,
+    yearAndDate DATE,
+    checked BOOLEAN
+);
+
+/*Replace programs*/
+CREATE RULE "replace_programs" AS
+    ON INSERT TO "programs"
+    WHERE
+      EXISTS(SELECT 1 FROM programs WHERE id=NEW.id)
+    DO INSTEAD
+       (UPDATE programs SET title=NEW.title, reducedTitle=NEW.reducedTitle, description=NEW.description, reducedDescription=NEW.reducedDescription, episodeTitle=NEW.episodeTitle, language=NEW.language, forfra=NEW.forfra, arkiv=NEW.arkiv, DVB=NEW.DVB, category=NEW.category, actors=NEW.actors, extra=NEW.extra, scheduledstart=NEW.scheduledstart, scheduledDuration=NEW.scheduledDuration, scheduledend=NEW.scheduledend, channel_name=NEW.channel_name, ys_epg=NEW.ys_epg, ys_download=NEW.ys_download, yearAndDate=NEW.yearAndDate, checked=NEW.checked WHERE id=NEW.id);
+       
+commit;
